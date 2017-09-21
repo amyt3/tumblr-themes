@@ -1,0 +1,392 @@
+<!---
+
+tumblr page by kenshinuesugi / nemurou 
+
+august 2017
+ 
+--->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<link rel="shortcut icon" href="{Favicon}">
+{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Open+Sans:400,400i,700" rel="stylesheet">
+
+
+<style type="text/css">
+
+
+/*custom scrollbar, you can delete this is you want*/
+::-webkit-scrollbar {
+   width:17px;
+   height:17px;
+}
+
+::-webkit-scrollbar {
+/*set background-color to the color of your bg*/
+   background-color:#fff; 
+}
+
+::-webkit-scrollbar-thumb {
+/*set border to the color of your bg*/
+   border:8px solid #fff; 
+/*set background-color to the color of your scrollbar*/
+   background-color:#aaa; 
+   min-width:26px;
+   min-height:26px;
+}
+/*end of custom scrollbar*/
+
+body {
+    /*chnage background color below*/
+    background:#fff;
+    /*change text color below*/
+    color:#444;
+    /*change font here*/
+    font-family: 'Open Sans', sans-serif;
+    /*change font size below*/
+    font-size:13px;
+    /*change letter spacing below*/
+    letter-spacing:.25px;
+    line-height:160%;
+}
+
+/*links*/
+a {
+    /*change link color*/
+    color:#000;
+    text-decoration:none;
+}
+
+img {
+    display:block;
+}
+
+/*container around your entire about*/
+#container {
+    width:540px;
+    border:1px solid #aaa;
+    margin:100px auto;
+    padding:10px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+/*header*/
+#name {
+    /*font family*/
+    font-family: 'Montserrat', sans-serif;
+    /*font size*/
+    font-size:15px;
+    /*delete the line below if you do not want your header in all caps*/
+    text-transform:uppercase;
+    /*spacing between each word*/
+    word-spacing:5px;
+    /*delete the line below if you do not want your header text centered*/
+    text-align:center;
+    border:1px solid #aaa;
+    /*delete the 3 lines below if you do not want rounded borders*/
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    padding:7px 10px;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+/*container around your icon & basic info*/
+#profile {
+    border:1px solid #aaa;
+    padding:20px 30px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    margin-top:10px;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+/*edit your icon appearance here*/
+#icon {
+    width:130px;
+
+}
+
+/*container around your basic info (the section right next to the icon)*/
+#facts {
+    margin-left:180px;
+    margin-top:-130px;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+
+/*container for each individual section*/
+.sections {
+    border-bottom:1px dashed #aaa;
+    padding:12px 0px;
+    position:relative;
+}
+
+/*container for each category within each section*/
+.category {
+    position:absolute;
+    font-family: 'Montserrat', sans-serif;
+    left:0px;
+    width:80px;
+}
+
+/*container for the text next to the category*/
+.info {
+    margin-left:100px;
+}
+
+.sections:first-child {
+    border-top:1px dashed #aaa;
+}
+
+/*container for info below your profile*/
+#bio {
+    margin-top:10px;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    /*change color of profile background*/
+    background:#fff;
+}
+
+/*sections within your bio*/
+.block {
+    margin-bottom:25px;
+    background:transparent;
+}
+
+/*heading for each section within your bio*/
+.title {
+    border-bottom:1px dashed #aaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size:16px;
+    padding:10px 10px 10px 20px;
+    letter-spacing:.75px;
+}
+
+/*container for text below each heading*/
+.txt {
+    margin:15px 30px 0px 30px;
+}
+
+/*edit your table here*/
+table {
+    width:100%;
+    border-spacing:5px;
+}
+
+/*table sections*/
+th, td {
+    padding:5px 7px;
+    border:1px solid #aaa;
+    text-align:left;
+    border-radius:4px;
+}
+
+/*1st and 3rd columns in the table*/
+td {
+    text-align:right;
+    background:#eaeaea;
+    font-family:'Montserrat', sans-serif;
+}
+
+/*2nd and 4th columns in the table*/
+th {
+    font-weight:400;
+}
+
+.tab {
+    overflow: hidden;
+    background:transparent;
+}
+
+/*buttons inside the tab */
+.tab button {
+    font-family: 'Montserrat', sans-serif;
+    font-size:17px;
+    color:inherit;
+    background:#fff;
+    float:left;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:7px 15px;
+    transition:0.3s;
+    border:1px solid #aaa;
+    margin-right:10px;
+    border-radius:4px 4px 0px 0px;
+    -moz-border-radius:4px 4px 0px 0px;
+    -webkit-border-radius:4px 4px 0px 0px;
+}
+
+/*buttons on hover */
+.tab button:hover {
+    background:#ddd;
+}
+
+/*active tab*/
+.tab button.active {
+    background:#fff;
+    border-bottom:1px solid #fff;
+}
+
+/*tab content*/
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    border:1px solid #aaa;
+    margin-top:-1px;
+}
+
+/*DO NOT TOUCH THE THEME CREDIT*/
+.saeyoung a{
+    background:#fff;
+    position:fixed;
+    left:20px;
+    bottom:15px;
+    opacity:.7;
+    color:#545454;
+    z-index:999;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    padding:3px 8px 4px 8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="name"><a href="/">gathering dreams</a></div>
+
+<div id="profile">
+<!--- replace https://static... with the URL of your icon--->
+<a href="/"><img id="icon" src="http://static.tumblr.com/wegwsdb/ihsoulpvp/omela.jpg"></a>
+<div id="facts">
+
+<!--copy and paste the text below to add another section-->
+<div class="sections">
+<div class="category">Name</div>
+<div class="info">Yuri Plisetsky</div>
+</div>
+<!--end copy and paste--->
+
+<div class="sections">
+<div class="category">Birthday</div>
+<div class="info">March 1st</div>
+</div>
+
+<div class="sections">
+<div class="category">Occupation</div>
+<div class="info">Figure skator</div>
+</div>
+
+
+</div>
+</div>
+
+<div id="bio">
+
+<div class="tab">
+<!---edit tab names here--->
+
+<button class="tablinks" onclick="opentab(event, 'Biography')" id="defaultOpen">Biography</button>
+
+<button class="tablinks" onclick="opentab(event, 'Information')">General Information</button>
+</div>
+
+<div id="Biography" class="tabcontent">
+ 
+<!--copy and paste the text below to add another section-->
+<div class="block">
+<div class="title">Appearance</div>
+<div class="txt">Yuri has blonde chin-length hair that covers the right side of his face and blue-green eyes. He is shorter than average for his age and has a thin frame; because of his appearance, he is nicknamed the Russian Fairy.</div>
+</div>
+<!--end copy and paste--->
+
+<div class="block">
+<div class="title">Personality</div>
+<div class="txt">Yuri is very ambitious and is determined to become the best of the best in figure skating. Contrary to his beauty and grace on the ice, once Yuri steps out of the rink he becomes foul-mouthed, rude, and dismissive of othersーearning him his second nickname, the Russian Punk. To ensure he gets what he wants, Yuri is not above threatening or intimidating his competition. He is short-tempered and very accustomed to yelling.</div>
+</div> 
+ 
+ 
+</div>
+
+<div id="Information" class="tabcontent">
+<table>
+
+<!--copy and paste the text below to add another section-->
+<tr>
+<td>Country</td>
+<th>Russia</th>
+<td>Gender</td>
+<th>Male</th>
+</tr>
+<!--end copy and paste--->
+
+<tr>
+<td>Age</td>
+<th>16</th>
+<td>Height</td>
+<th>163 cm (5'4)</th>
+</tr>
+
+<tr>
+<td>Coach</td>
+<th>Yakov Feltsman<br>Lilia Baranovskaya</th>
+<td>Family</td>
+<th>
+Nikolai Plisetsky<br>
+Potya (Pet)</th>
+</tr>
+
+</table>
+</div>
+
+
+<script>
+function opentab(evt, infos) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(infos).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</div>
+</div>
+</body>
+
+</html>
+
+
+<!----PLEASE DO NOT REMOVE THE THEME CREDIT--->
+<span class="saeyoung"><a href="http://nemurou.tumblr.com/">THEME</a></span>
