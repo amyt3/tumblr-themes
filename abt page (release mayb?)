@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<link rel="shortcut icon" href="{Favicon}">
+{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|PT+Serif:400,400i,700" rel="stylesheet">
+
+
+ 
+<style type="text/css">
+
+/*tumblr controls by cyantists*/
+iframe.tmblr-iframe {
+    z-index: 99999999999999!important;
+    top: 0!important;
+    right: 0!important;
+    opacity: 0.4;
+    margin:-200px 15px 0px 0px!important;
+    filter: invert(1) contrast(150%);
+    -webkit-filter: invert(1) contrast(150%);
+    -o-filter: invert(1) contrast(150%);
+    -moz-filter: invert(1) contrast(150%);
+    -ms-filter: invert(1) contrast(150%);
+    transform: scale(0.5);
+    transform-origin: 100% 0;
+    -webkit-transform: scale(.7);
+    -webkit-transform-origin: 100% 0;
+    -o-transform: scale(.7);
+    -o-transform-origin: 100% 0;
+    -moz-transform: scale(.7);
+    -moz-transform-origin: 100% 0;
+    -ms-transform: scale(.7);
+    -ms-transform-origin: 100% 0;
+}
+
+::-webkit-scrollbar {
+   width:0px;
+   height:0px;
+   background:#fff;
+}
+
+::-webkit-scrollbar-thumb {
+   border:0px solid #fff; 
+   min-width:0px;
+   min-height:0px;
+}
+
+ 
+body {
+    margin:0;
+    font-size:13px;
+    font-family: 'PT Sans', sans-serif;
+    line-height:180%;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+    color:#686868;
+    background:#f0f1f5; 
+}
+
+a {
+    color:#E69896;
+    text-decoration:none; 
+}
+
+#right {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:50vw;
+    height:100vh;
+    display:-webkit-flex;
+    display:flex;
+    -webkit-align-items:center;
+    align-items:center;
+    -webkit-justify-content:center;
+    justify-content:center;
+}
+
+#box {
+    font-size:15px;
+    line-height:190%;
+    text-align:justify;
+    background:#fff;
+    position:fixed;
+    right:0;
+    bottom:0;
+    width:50vw;
+    height:100vh;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#box:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width:40px 40px 40px 0;
+    border-color:transparent #fff;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-top: -40px;
+    left: -39px;
+    top: 50%;
+}
+
+.txt {
+    overflow:auto;
+    max-height:100vh;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding:50px 70px;
+}
+
+.txt a {
+    color:#E69896;
+}
+
+.hexagon {
+    position:relative;
+    width:300px; 
+    height:173.21px;
+    margin:86.60px 0;
+    background-image: url(http://static.tumblr.com/wegwsdb/BL6owp25o/icon.png);
+    background-size:auto 346.4102px;
+    background-position: center;
+}
+
+.hexTop, .hexBottom {
+    position:absolute;
+    z-index: 1;
+    width: 212.13px;
+    height:212.13px;
+    overflow: hidden;
+    -webkit-transform:scaleY(0.5774) rotate(-45deg);
+    -ms-transform:scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background:inherit;
+    left: 43.93px;
+}
+
+.hexTop:after, .hexBottom:after {
+    content: "";
+    position:absolute;
+    width:300px;
+    height:173.20508075688775px;
+    -webkit-transform:rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+    -ms-transform:rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+    transform:rotate(45deg) scaleY(1.7321) translateY(-86.6025px);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin:0 0;
+    background:inherit;
+}
+
+.hexTop {
+    top: -106.0660px;
+}
+
+.hexTop:after {
+    background-position: center top;
+}
+
+.hexBottom {
+    bottom: -106.0660px;
+}
+
+.hexBottom:after {
+    background-position: center bottom;
+}
+
+.hexagon:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 300px;
+    height: 173.2051px;
+    z-index: 2;
+    background: inherit;
+}
+
+
+.title {
+    font-family: 'PT Serif', serif;
+    font-size:23px;
+    text-transform:uppercase;
+    word-spacing:6px;
+    display:block;
+    margin-bottom:25px;
+    color:#E69896;
+    text-align:center;
+}
+
+#main, #bottom {
+    position:absolute;
+    background:#fff;
+    box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding:1px 10px 2px 10px;
+    border-radius:4px; 
+    -moz-border-radius:4px; 
+    -webkit-border-radius:4px;
+    font-family: 'PT Serif', serif;
+    word-spacing:3px;
+    text-transform:uppercase;
+}
+
+#main {
+    margin-top:-230px;
+}
+
+#bottom {
+    margin-top:230px;
+}
+
+#abt, #abt a {
+    margin-bottom:25px;
+    font-family: 'PT Serif', serif;
+    font-style:italic;
+    color:#E69896;
+    text-align:center;
+    font-size:14px;
+}
+
+</style> </head> <body>
+
+<div id="right">
+<div id="main"><span><a href="/">return to home page</a></span></div>
+<div class="hexagon">
+<div class="hexTop"></div>
+<div class="hexBottom"></div>
+</div>
+<div id="bottom"><span><a href="http://kenshinuesugi.tumblr.com/">view my main blog</a></span></div>
+</div>
+
+<div id="box">
+
+<div class="txt">
+
+<span class="title">About the Creator</span>
+<div id="abt">
+<a href="https://mypersonality.info/personality-types/istj/">ISTJ.</a> <a href="https://www.enneagraminstitute.com/type-4/">Type 4.</a> <a href="http://temperaments.fighunter.com/?page=melancholic">Melancholic.</a> Slytherin. <a href="http://easydamus.com/chaoticneutral.html">Chaotic Neutral.</a> 
+<br>Click the links above to find further information about my personality types. 
+</div>
+<div style="margin-bottom:60px;">Hello, there! My name is Amy. I'm 16 and currently a senior in high school. I was born in Guangzhou and raised in New York City. My current fandoms are (but not limited to!) Persona 5, Yuri on Ice, Gintama, Mystic Messenger, and Katekyo Hitman Reborn. I procrastinate 24/7 by watching (but never finishing) Korean dramas & Japanese cartoons + reading fanfiction & webtoons. I also occasionally play visual novels.<p>On a side note, I'll be applying to university this year which means that there will be times when I won't be able to put out new content and answer questions.
+
+</div>
+
+<span class="title">How It All Started</span>
+I wrote my very first line of code way back when I made my Tumblr blog in 2014 and saw how hideous the default Tumblr theme (Optica) looked. Granted, getting rid of the header and changing the font size wasn't really a big deal but soon after, I stumbled upon <a href="http://theme-hunter.tumblr.com/">theme-hunter</a>, a resource blog that showcased Tumblr themes created by various bloggers, and immediately decided that I would learn how to create one for my own blog.<p>I started messing around with HTML and CSS and worked with base codes until I was able to create a theme from scratch. During this time, I released a number of themes under a couple of URLS but it wasn't until after completing the <a href="https://girlswhocode.com/">GirlsWhoCode Summer Immersion Porgram</a> that I began posting my content on Nemurou.<p>
+
+</div>
+
+</div>
+
+
+
+
+
+</body>
+
+ 
+</html>
+
+
+
