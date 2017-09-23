@@ -1,0 +1,308 @@
+<!---
+ 
+tumblr page by kenshinuesugi / nemurou
+ 
+september 2017
+ 
+--->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{Title}</title>
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+<link rel="shortcut icon" href="{Favicon}">
+{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700|PT+Serif:400,400i,700" rel="stylesheet">
+
+
+<style type="text/css">
+
+/*tumblr controls by cyantists*/
+iframe.tmblr-iframe {
+    z-index: 99999999999999!important;
+    top: 0!important;
+    right: 0!important;
+    opacity: 0.4;
+/*i moved the controls off the page lol but if you want them back just delete the line right below*/
+    margin-top:-200px!important;
+    filter: invert(1) contrast(150%);
+    -webkit-filter: invert(1) contrast(150%);
+    -o-filter: invert(1) contrast(150%);
+    -moz-filter: invert(1) contrast(150%);
+    -ms-filter: invert(1) contrast(150%);
+    transform: scale(0.5);
+    transform-origin: 100% 0;
+    -webkit-transform: scale(.7);
+    -webkit-transform-origin: 100% 0;
+    -o-transform: scale(.7);
+    -o-transform-origin: 100% 0;
+    -moz-transform: scale(.7);
+    -moz-transform-origin: 100% 0;
+    -ms-transform: scale(.7);
+    -ms-transform-origin: 100% 0;
+}
+
+/*NOTICE: I WOULD NOT RECOMMEND CHANGING ANY WIDTHS IF YOU ARE NOT FAMILIAR WITH HTML AND CSS.*/
+
+::-webkit-scrollbar {
+    width:17px;
+    height:17px;
+    background-color:#fff;/*make sure this is the same color as your bg*/
+}
+ 
+::-webkit-scrollbar-thumb {
+    border:8px solid #fff;/*make sure this is the same color as your bg*/
+    background-color:#c6c6c6;/*color of your scrollbar*/
+    min-width:26px;
+    min-height:26px;
+}
+
+body {
+    background:#fff;/*background color*/
+    font-family: 'PT Sans', sans-serif;
+    font-size:15px;
+    line-height:160%;
+    color:#3a3a3a;/*text color*/
+    margin:0;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased;
+}
+
+a {
+    text-decoration:none;
+    color:#3a3a3a;/*color of your links*/
+}
+
+#contain {
+    margin:150px auto 0px auto;
+    width:650px;
+}
+
+#title, #title a{
+    font-family: 'PT Serif', serif;
+    font-size:25px;/*title font size*/
+    display:block;
+    color:#3a3a3a;/*color of title*/
+    margin-bottom:25px;
+}
+
+#tagline {
+    margin-bottom:25px;
+    line-height:180%;
+    font-size:15px;/*tagline font size*/
+/*delete the line below if you do not want your tagline to be in italic*/
+    font-style:italic;
+}
+
+/*this is the tiny border you see between the tagline and links + below your basic info title*/
+.line {
+    width:30px;
+    height:1px;
+    background:#ccc;/*border color*/
+    margin-bottom:25px;
+}
+
+#links a {
+    display:inline;
+    font-family: 'PT Serif', serif;
+    font-size:15px;/*links font size*/
+    padding-right:15px;/*spacing between links*/
+    color:#161616;/*change the color of your links*/
+}
+
+#links a:after {
+    content:'.';/*you can change the period to whatever you like. if you don't want anything proceeding your links just delete the period*/
+}
+
+/*the container for your about text and image (the one on the right)*/
+#first {
+    position:relative;
+    margin-top:55px;
+    padding-bottom:55px;
+    border-bottom:1px solid #ccc;/*#ccc is the color of the long border*/
+}
+
+#about {
+    width:300px;
+    position:absolute;
+    font-size:15px;/*about text font size*/
+    line-height:180%;
+    left:0;
+/*about text looks a lot neater if the text align is set to justify imo but if the spacing looks wonky just delete the line below*/
+    text-align:justify;
+}
+
+#rightimg {
+    margin-left:350px;
+    width:300px;
+    border:8px solid #eee;/*border around iamge*/
+    box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+/*the container for your basic info section*/
+#second {
+    margin-top:55px;
+    position:relative;
+}
+
+#leftimg {
+    width:300px;
+    position:absolute;
+    line-height:180%;
+    left:0;
+    border:8px solid #eee;/*border around image*/
+    box-sizing:border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin-bottom:150px;
+}
+
+#info {
+    margin:0px 0px 150px 350px;
+    line-height:180%;
+}
+
+#label {
+    font-family: 'PT Serif', serif;
+    font-size:20px;/*basic info title font size*/
+    margin-bottom:25px;
+}
+
+.info {
+    margin-bottom:10px;
+}
+
+/*categories, i guess. (it's the text in bold)*/
+.category {
+    font-weight:700;
+    display:inline;
+    margin-right:8px;
+/*color of categories. if you want this to be the same color as the text proceeding it, just delete the line below*/
+    color:#161616;
+}
+
+
+/*DO NOT TOUCH THE THEME CREDIT*/
+.saeyoung a{
+    background:#fff;
+    position:fixed;
+    left:20px;
+    bottom:15px;
+    opacity:.7;
+    color:#000;
+    font-size:10px;
+    z-index:999;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    padding:3px 8px 4px 8px;
+}
+
+   
+</style> </head> <body>
+
+<div id="contain">
+
+<div id="title">Maps of the Universe</div>
+
+<div id="tagline">Unfortunately, the clock is ticking, the hours are going by. The past increases, the future recedes. Possibilities decreasing, regrets mounting.</div>
+
+<div class="line"></div>
+
+<div id="links">
+<!--these are your links. add/delete as you please-->
+<a href="/">return</a>
+<a href="/ask">message</a>
+<a href="/archive">archive</a>
+<!--copy the line below to add another link-->
+<a href="/">link one</a>
+<!--end code snippet-->
+<a href="/">link two</a>
+<a href="/">link three</a>
+<a href="/">link four</a>
+</div>
+
+<!--start of about section-->
+<div id="first">
+<div id="about">
+Lost opportunities, lost possibilities, feelings we can never get back. That's part of what it means to be alive. But inside our heads - at least that's where I imagine it - there's a little room where we store those memories. A room like the stacks in this library. And to understand the workings of our own heart we have to keep on making new reference cards. We have to dust things off every once in awhile, let in fresh air, change the water in the flower vases. In other words, you'll live forever in your own private library.
+</div>
+
+<!--replace http://static.tumblr.com/wegwsdb/vGAowm95f/c-fgdatvyayvzxv.png with your image url-->
+<img id="rightimg" src="http://static.tumblr.com/wegwsdb/vGAowm95f/c-fgdatvyayvzxv.png">
+</div>
+<!--end of about section-->
+
+<!--start basic info section-->
+<div id="second">
+
+<!--replace http://static.tumblr.com/wegwsdb/xhTowm9sy/c-fgolhuiaatfrb.jpg with your image url-->
+<img id="leftimg" src="http://static.tumblr.com/wegwsdb/xhTowm9sy/c-fgolhuiaatfrb.jpg">
+
+<div id="info">
+
+<!--replace basic info with whatever you want-->
+<div id="label">Basic Info</div>
+
+<div class="line"></div>
+
+<!--copy code below to add more sections-->
+<div class="info">
+<div class="category">Name:</div>Velvet
+</div>
+<!--end of code snippet-->
+
+<div class="info">
+<div class="category">MBTI:</div>ISTJ 
+</div>
+
+<div class="info">
+<div class="category">Birthday:</div>December 5th
+</div>
+
+<div class="info">
+<div class="category">Age:</div>19
+</div>
+
+<div class="info">
+<div class="category">Location:</div>New York City
+</div>
+
+<div class="info">
+<div class="category">Occupation:</div>Student
+</div>
+
+<div class="info">
+<div class="category">Hobbies:</div>Piano, baking sweets, knitting, archery, and developing games
+</div>
+
+
+
+
+
+
+<!--paste your info sections above this comment-->
+
+</div>
+
+</div>
+<!--end of basic info section-->
+
+</div>
+
+
+
+
+</body>
+ 
+
+ 
+</html>
+
+<!----PLEASE DO NOT REMOVE THE THEME CREDIT--->
+<span class="saeyoung"><a href="http://nemurou.tumblr.com/">CREDIT</a></span>
